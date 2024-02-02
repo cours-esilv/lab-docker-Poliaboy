@@ -1,4 +1,13 @@
 version: '3'
 services:
-  my-service:
-    image: poliaboy/my_back_app:latest
+  backend-service:
+    image: poliaboy/my_back_app
+    ports:
+      - "8080:8080"
+
+  frontend-service:
+    image: poliaboy/my_front_app
+    ports:
+      - "3000:3000"
+    environment:
+      - API_URL=http://localhost:8080
