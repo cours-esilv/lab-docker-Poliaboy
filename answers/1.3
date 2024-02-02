@@ -1,0 +1,3 @@
+cd app/back
+docker build -t my_back_app:latest .
+docker run -e CURRENT_ENVIRONMENT=development -p 8000:5000 my_back_app:latest
